@@ -3,6 +3,10 @@ import React from 'react';
 import { Categories, Header } from './components/index';
 
 function App() {
+
+  
+
+
   return (
       <div className="wrapper">
 
@@ -12,7 +16,10 @@ function App() {
         <div className="container">
           <div className="content__top">
 
-            <Categories items={['Мясные', 'Вегетарианская','Гриль','Острые','Закрытые']}/>
+            <Categories 
+              items={['Мясные', 'Вегетарианская','Гриль','Острые','Закрытые']}
+              onClickItem = {(name:string) => console.log(name)}
+            />
 
             <div className="sort">
               <div className="sort__label">
