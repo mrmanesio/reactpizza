@@ -14,7 +14,7 @@ const Header = () => {
             </div>
           </div>
           <div className="header__cart">
-           <Button />
+           <Button className="button--cart" />
           </div>
         </div>
       </header>
