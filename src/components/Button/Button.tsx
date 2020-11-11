@@ -4,7 +4,7 @@ import classNames from 'classnames';
 const Button = (props:any) => {
 
     return (
-            <a href="/cart.html" className={classNames('button', props.className, {
+            <a href="/cart1221.html" className={classNames('button', props.className, {
                 'button--outline': props.outline,
             })}>
             <span>520 ₽</span>

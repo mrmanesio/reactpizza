@@ -8,8 +8,13 @@
 
     svg {
       margin-right: 8px;
-    }
+      transition: transform 0.3s ease;
 
+      &.rotated {
+        transform: rotate(180deg);
+      }
+    }
+    
     b {
       margin-right: 8px;
     }
