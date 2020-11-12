@@ -14,7 +14,7 @@ function App() {
       <div className="content">
         <Route path="/" component={Home} exact />
         <Route path="/cart" component={Cart} exact/>
-      <Home />
+      
       </div>
     </div>
 
