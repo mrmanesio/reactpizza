@@ -29,8 +29,6 @@ function App() {
       
       </div>
     </div>
-
-
   );
 }
 
