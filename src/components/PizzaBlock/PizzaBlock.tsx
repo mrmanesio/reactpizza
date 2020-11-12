@@ -1,6 +1,20 @@
 import React from 'react'
+import classNames from 'classnames'
 
 function PizzaBlock(props:any) {
+    const avaibleTypes = ['тонкое', 'традиционное'];
+    const avaibleSize = [26, 30, 40];
+    const [activeType, setActiveType] = React.useState(props.types[0]);
+    const [activeSize, setActiveSize] = React.useState(props.sizes[0]);
+
+    const onSelectType = (index:number) => {
+        setActiveType(index);
+    } 
+
+    const onSelectSize = (index:number) => {
+        setActiveSize(index);
+    }
+
     return (
         <div className="pizza-block" key = {props.id}>
           <img
@@ -11,13 +25,27 @@ function PizzaBlock(props:any) {
           <h4 className="pizza-block__title">{props.name}</h4>
           <div className="pizza-block__selector">
             <ul>
-              <li className="active">тонкое</li>
-              <li>традиционное</li>
+                {avaibleTypes.map((type, index) => (
+                    <li key = {index}
+                        onClick = {() => onSelectType(index)}
+                        className = {classNames({
+                            active: activeType === index,
+                            disabled: !props.types.includes(index),
+                        })}>
+                    {type}</li>
+                ))}
             </ul>
             <ul>
-              <li className="active">26 см.</li>
-              <li>30 см.</li>
-              <li>40 см.</li>
+                {avaibleSize.map((size, index) => (
+                    <li key = {index}
+                        onClick = {() => onSelectSize(index)}
+                        className = {classNames({
+                            active: activeSize === index,
+                            disabled: !props.sizes.includes(size),
+                        })}>
+                        {size} см.
+                    </li>
+                ))}
             </ul>
           </div>
           <div className="pizza-block__bottom">
