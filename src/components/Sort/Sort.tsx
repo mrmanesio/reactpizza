@@ -2,14 +2,12 @@ import React, { useState, useRef, useEffect } from 'react'
 
 function Sort(props:any) {
     const [visible, setVisible] = useState(false);
-
     const [activeItem, setActiveItem] = useState(0);
+    const sortRef:any = useRef();
 
     const toggleVisiblePopup = () => {
-        setVisible(!visible)
-    }
-    
-    const sortRef:any = useRef();
+      setVisible(!visible)
+  }
 
     useEffect(() => {
         document.body.addEventListener('click', (e) => {
@@ -36,19 +34,19 @@ function Sort(props:any) {
                   />
                 </svg>
                 <b>Сортировка по:</b>
-                <span onClick={toggleVisiblePopup}>{props.items[activeItem]}</span>
+                <span onClick={toggleVisiblePopup}>{props.items[activeItem].name}</span>
               </div>
               
            {visible && (<div className="sort__popup">
                 <ul>
 
                 {props.items && props.items.map(
-                    (name:string, index:number) => (
+                    (obj:any, index:number) => (
                         <li className = {activeItem === index ? 'active' : ''}
                             onClick={() => {
                                 setActiveItem(index);
                                 setVisible(false);
-                            }} key={`${name}_${index}`}>{name}</li>
+                            }} key={`${obj.type}_${index}`}>{obj.name}</li>
                     )
                 )}
 

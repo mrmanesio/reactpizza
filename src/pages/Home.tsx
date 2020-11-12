@@ -12,7 +12,7 @@ function Home(props:any) {
           />
 
           <Sort 
-            items={['популярности', 'цене','алфавиту']}
+            items={[{name: 'популярности', type: 'popular'}, {name: 'цене', type: 'price'}, {name: 'алфавиту', type: 'alphabet'}]}
           />
         </div>
 
